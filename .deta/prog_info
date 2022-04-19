@@ -1,0 +1,1 @@
+{"id":"eb502fa8-ac49-449c-8567-9ad148628891","space":16320,"runtime":"nodejs14.x","name":"wes-public","path":"48733p","project":"a0hzp2jv","account":"144798365827","region":"eu-central-1","deps":["express@^4.17.3","cors@^2.8.5","dotenv@^16.0.0"],"envs":null,"public":true,"log_level":"debug","cron":""}

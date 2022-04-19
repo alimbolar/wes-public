@@ -1,7 +1,7 @@
 const express = require("express");
 const dotenv = require("dotenv");
 dotenv.config();
-const app = require("./app");
+const app = require("./index");
 
 console.log(process);
 

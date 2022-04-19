@@ -3,5 +3,23 @@
     "cors": "^2.8.5",
     "dotenv": "^16.0.0",
     "express": "^4.17.3"
-  }
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "wes-public",
+  "description": "This is a test server that's being built by me in a phased manner.",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alimbolar/wes-public.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alimbolar/wes-public/issues"
+  },
+  "homepage": "https://github.com/alimbolar/wes-public#readme"
 }
