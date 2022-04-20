@@ -4,6 +4,9 @@ const app = express();
 const cors = require("cors");
 const mailRouter = require("./routes/mailRoutes");
 
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
 app.use(cors());
 
 app.get("/", function (req, res) {

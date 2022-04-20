@@ -1,6 +1,7 @@
 const nodemailer = require("nodemailer");
 const dotenv = require("dotenv");
 dotenv.config();
+const email = require("./../views/email-templates/renderOrder");
 
 const transporter = nodemailer.createTransport({
   service: "mailgun",
@@ -18,20 +19,22 @@ transporter.verify((error, success) => {
     : console.log(`Ready to send emails : ${success}`);
 });
 
-const sendPayOfflineEmailOptions = {
-  from: "info@worldeyewearstore.com",
-  to: "alimbolar@gmail.com",
-  subject: "Your Order Details",
-  text: "Testing Nodemailer",
-};
-
 exports.sendPayOfflineEmail = (req, res, next) => {
-  transporter.sendMail(sendPayOfflineEmailOptions, (error, success) => {
+  const mailOptions = {
+    from: req.body.customerEmail,
+    to: "alimbolar@gmail.com",
+    subject: `Order Details for ${req.body.customerName}`,
+    html: email.renderOrder(),
+  };
+  transporter.sendMail(mailOptions, (error, data) => {
     if (error) {
       console.log(error.message);
+      res.json({
+        status: "fail",
+      });
     } else {
-      console.log(success);
-      res.json(success);
+      console.log(`Message sent`);
+      res.json({ status: "success", email: req.body.customerEmail });
     }
   });
 };
