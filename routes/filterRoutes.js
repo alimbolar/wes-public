@@ -2,6 +2,6 @@ const express = require("express");
 const filterController = require("./../controllers/filterController");
 const router = express();
 
-router.get("/getAll", filterController.getAllFilters);
+router.get("/", filterController.getAllFilters);
 
 module.exports = router;
